@@ -37,23 +37,23 @@ export default function Product({ product }: ProductProps) {
        // console.log(cartDetails)
     }
 
-    async function handleBuyProduct() {
-        try {
-            setIsCreatingCheckoutSession(true)
-            const response = await axios.post('/api/checkout', {
-                priceId: product.defaultPriceId,
-            })
+    // async function handleBuyProduct() {
+    //     try {
+    //         setIsCreatingCheckoutSession(true)
+    //         const response = await axios.post('/api/checkout', {
+    //             priceId: product.defaultPriceId,
+    //         })
 
-            const { checkoutUrl } = response.data
+    //         const { checkoutUrl } = response.data
 
-            //ex = Router.push('/checkout')
-            window.location.href = checkoutUrl //aplicação interna assim
+    //         //ex = Router.push('/checkout')
+    //         window.location.href = checkoutUrl //aplicação interna assim
 
-        } catch (err) {
-            setIsCreatingCheckoutSession(false);
-            alert('Falha ao redirecionar ao checkout')
-        }
-    }
+    //     } catch (err) {
+    //         setIsCreatingCheckoutSession(false);
+    //         alert('Falha ao redirecionar ao checkout')
+    //     }
+    // }
 
     return (
         <ProductContainer>
